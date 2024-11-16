@@ -20,8 +20,8 @@ export default function InfiniteCanvas() {
     });
 
     fabricCanvas.set({
-      width: window.innerWidth - 80,
-      height: window.innerHeight - 80,
+      width: window.innerWidth - 40,
+      height: window.innerHeight - 95,
     });
     fabricCanvas.wrapperEl!.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
 
@@ -95,42 +95,14 @@ export default function InfiniteCanvas() {
 
   return (
     <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "calc(100vw - 20px)",
-        height: "calc(100vh - 20px)",
-        backgroundColor: "#333",
-        padding: "20px",
-        boxSizing: "content-box",
-      }}
+      className="canvas-wrapper"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
       <canvas ref={canvasRef} />
-      <div
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 10,
-        }}
-      >
-        <button
-          onClick={addRectangle}
-          style={{
-            padding: "10px 20px",
-            fontSize: "16px",
-            backgroundColor: "crimson",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
+      <div className="btn-wrapper">
+        <button onClick={addRectangle} className="btn">
           Agregar Rectángulo
         </button>
       </div>
